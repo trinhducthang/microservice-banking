@@ -9,6 +9,7 @@ import reactor.core.publisher.Mono;
 public interface LoanOfferService {
     public Flux<LoanOffer> getAllLoanOffers();
     public Mono<LoanOffer> getLoanOfferById(String  id);
-    public Mono<LoanOffer> createLoanOffer(LoanOffer loanOffer);
+    public LoanOffer createLoanOffer(LoanOffer loanOffer);
     public Mono<LoanOffer> updateLoanOffer(LoanOffer loanOffer, String loanOfferId);
+    public Mono<Boolean> deleteLoanOffer(String id);
 }

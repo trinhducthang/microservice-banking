@@ -3,3 +3,7 @@ spring:
     mongodb:
       uri: mongodb://root:example@localhost:27017
       database: LoanService
+
+jwt:
+  signerKey: "T8n9uQUag43p2EysKjWcCZwvU32GcvIDAyRmZQSIjFRlJy7KjnsFGOmfUA15cK1c"
+

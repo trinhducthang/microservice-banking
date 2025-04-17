@@ -6,6 +6,9 @@
       <list>
         <option value="$PROJECT_DIR$/ABCBank/pom.xml" />
         <option value="$PROJECT_DIR$/LoanService/pom.xml" />
+        <option value="$PROJECT_DIR$/vnpayservice/pom.xml" />
+        <option value="$PROJECT_DIR$/apigateway/pom.xml" />
+        <option value="$PROJECT_DIR$/frontend-service/pom.xml" />
       </list>
     </option>
   </component>

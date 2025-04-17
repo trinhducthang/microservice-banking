@@ -25,8 +25,8 @@ public class LoanOfferServiceImpl implements LoanOfferService {
     }
 
     @Override
-    public Mono<LoanOffer> createLoanOffer(LoanOffer loanOffer) {
-        return loanOfferRepository.save(loanOffer);
+    public LoanOffer createLoanOffer(LoanOffer loanOffer) {
+        return loanOfferRepository.save(loanOffer).block();
     }
 
     @Override
@@ -39,5 +39,13 @@ public class LoanOfferServiceImpl implements LoanOfferService {
                     return loanOfferRepository.save(existingOffer);
                 });
     }
+
+    @Override
+    public Mono<Boolean> deleteLoanOffer(String id) {
+        return loanOfferRepository.findById(id)
+                .switchIfEmpty(Mono.error(new RuntimeException("LoanOffer not found")))
+                .flatMap(offer -> loanOfferRepository.delete(offer).thenReturn(true));
+    }
+
 
 }

@@ -1,0 +1,22 @@
+server:
+  port: 9999
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      mvc:
+        routes:
+          - id: LoanService
+            uri: http://localhost:8889/
+            predicates:
+              - Path=/abc/**
+          - id: vnpayservice
+            uri: http://localhost:8887/
+            predicates:
+              - Path=/vnpay/**
+          - id: abcbank
+            uri: http://localhost:8888/
+            predicates:
+              - Path=/abcbank/**

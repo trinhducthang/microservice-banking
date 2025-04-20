@@ -1,4 +1,4 @@
-package com.ducthang.LoanService.jwt;
+package com.ducthang.LoanService.configuration.security;
 
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
@@ -20,7 +20,6 @@ import org.springframework.security.oauth2.server.resource.authentication.JwtGra
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.access.AccessDeniedHandler;
-import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
@@ -48,6 +47,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
 
                         .requestMatchers("/api/v1/loan-offers").permitAll()
+                        .requestMatchers(HttpMethod.GET,"/api/v1/loan-offers/**").permitAll()
                         .requestMatchers("/api/v1/loan-offers/**").hasRole("ADMIN")
                         .anyRequest().authenticated()
                 )

@@ -1,7 +1,7 @@
 spring:
   data:
     mongodb:
-      uri: mongodb://root:example@localhost:27017
+      uri: mongodb://admin:admin123@localhost:27017
       database: LoanService
 
 jwt:

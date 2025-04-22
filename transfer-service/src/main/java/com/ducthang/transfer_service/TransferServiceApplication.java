@@ -1,13 +1,13 @@
-package com.ducthang.frontend_service;
+package com.ducthang.transfer_service;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class FrontendServiceApplication {
+public class TransferServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(FrontendServiceApplication.class, args);
+		SpringApplication.run(TransferServiceApplication.class, args);
 	}
 
 }

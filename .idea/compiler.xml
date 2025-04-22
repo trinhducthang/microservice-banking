@@ -10,7 +10,7 @@
         <module name="apigateway" />
         <module name="ABCBank" />
         <module name="LoanService" />
-        <module name="frontend-service" />
+        <module name="transfer-service" />
       </profile>
       <profile name="Annotation profile for vnpayservice" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -28,7 +28,7 @@
       <module name="ABCBank" options="-parameters" />
       <module name="LoanService" options="-parameters" />
       <module name="apigateway" options="-parameters" />
-      <module name="frontend-service" options="-parameters" />
+      <module name="transfer-service" options="-parameters" />
       <module name="vnpayservice" options="-parameters" />
     </option>
   </component>

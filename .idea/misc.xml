@@ -9,6 +9,7 @@
         <option value="$PROJECT_DIR$/vnpayservice/pom.xml" />
         <option value="$PROJECT_DIR$/apigateway/pom.xml" />
         <option value="$PROJECT_DIR$/frontend-service/pom.xml" />
+        <option value="$PROJECT_DIR$/transfer-service/pom.xml" />
       </list>
     </option>
   </component>

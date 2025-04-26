@@ -2,9 +2,6 @@ package com.ducthang.transfer_service.service;
 
 import com.ducthang.transfer_service.client.ClientAccountBankService;
 import com.ducthang.transfer_service.dto.AccountBankDTO;
-import com.ducthang.transfer_service.entity.User;
-import com.ducthang.transfer_service.mapper.AccountBankMapper;
-import com.ducthang.transfer_service.entity.AccountBank;
 import com.ducthang.transfer_service.entity.TransactionDetails;
 import com.ducthang.transfer_service.repository.TransactionDetailsRepository;
 import lombok.RequiredArgsConstructor;
@@ -23,8 +20,6 @@ public class TransferService {
     private final TransactionDetailsRepository transactionDetailsRepository;
 
     private final ClientAccountBankService clientAccountBankService;
-
-    private final AccountBankMapper accountBankMapper;
 
 
     public AccountBankDTO transferMoney(String from, String to, String description, BigDecimal amount) {

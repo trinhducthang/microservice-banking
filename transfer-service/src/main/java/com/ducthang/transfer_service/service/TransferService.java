@@ -4,6 +4,7 @@ import com.ducthang.transfer_service.client.ClientAccountBankService;
 import com.ducthang.transfer_service.dto.AccountBankDTO;
 import com.ducthang.transfer_service.entity.TransactionDetails;
 import com.ducthang.transfer_service.repository.TransactionDetailsRepository;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -22,6 +23,7 @@ public class TransferService {
     private final ClientAccountBankService clientAccountBankService;
 
 
+    @Transactional
     public AccountBankDTO transferMoney(String from, String to, String description, BigDecimal amount) {
 
 

@@ -26,6 +26,11 @@ public class LoanOfferServiceImpl implements LoanOfferService {
 
     @Override
     public LoanOffer createLoanOffer(LoanOffer loanOffer) {
+        if(Boolean.TRUE.equals(loanOfferRepository.existsAllByDurationAndInterestRateAndLoanAmount(loanOffer.getDuration(),
+                loanOffer.getInterestRate(),
+                loanOffer.getLoanAmount()).block())){
+            throw new RuntimeException("Loan offer already exists");
+        }
         return loanOfferRepository.save(loanOffer).block();
     }
 

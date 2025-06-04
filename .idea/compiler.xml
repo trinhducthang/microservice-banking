@@ -10,6 +10,7 @@
         <module name="apigateway" />
         <module name="ABCBank" />
         <module name="LoanService" />
+        <module name="mail-service" />
         <module name="transfer-service" />
       </profile>
       <profile name="Annotation profile for vnpayservice" enabled="true">
@@ -28,6 +29,7 @@
       <module name="ABCBank" options="-parameters" />
       <module name="LoanService" options="-parameters" />
       <module name="apigateway" options="-parameters" />
+      <module name="mail-service" options="-parameters" />
       <module name="transfer-service" options="-parameters" />
       <module name="vnpayservice" options="-parameters" />
     </option>

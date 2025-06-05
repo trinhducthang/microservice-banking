@@ -2,3 +2,8 @@ jwt:
   signerKey: "T8n9uQUag43p2EysKjWcCZwvU32GcvIDAyRmZQSIjFRlJy7KjnsFGOmfUA15cK1c"
 
 
+spring:
+  rabbitmq:
+    host: localhost
+    username: guest
+    password: guest

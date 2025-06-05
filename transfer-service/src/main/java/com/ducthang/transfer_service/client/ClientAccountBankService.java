@@ -1,12 +1,12 @@
 package com.ducthang.transfer_service.client;
 
 import com.ducthang.transfer_service.dto.AccountBankDTO;
-import com.ducthang.transfer_service.dto.ApiResponse;
-import com.ducthang.transfer_service.entity.AccountBank;
 import com.ducthang.transfer_service.entity.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.reactive.function.client.WebClient;
 
 @Service
@@ -48,5 +48,13 @@ public class ClientAccountBankService {
                 .block();
     }
 
+
+    public String getEmail(String accountNumber) {
+        return webClient.get()
+                .uri("/abcbank/bank/getEmail/{accountNumber}",accountNumber)
+                .retrieve()
+                .bodyToMono(String.class)
+                .block();
+    }
 
 }

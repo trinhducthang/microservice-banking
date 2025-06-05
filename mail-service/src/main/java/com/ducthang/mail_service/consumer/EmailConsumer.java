@@ -10,14 +10,15 @@ import org.springframework.stereotype.Component;
 @Component
 public class EmailConsumer {
 
-    private final EmailSenderService emailSender;
+    private final EmailSenderService emailSenderService;
 
-    public EmailConsumer(EmailSenderService emailSender) {
-        this.emailSender = emailSender;
+    public EmailConsumer(EmailSenderService emailSenderService) {
+        this.emailSenderService = emailSenderService;
     }
 
     @RabbitListener(queues = RabbitMQConfig.QUEUE)
     public void receiveEmail(EmailMessage message) {
-        emailSender.send(message.getTo(), message.getSubject(), message.getBody());
+        emailSenderService.send(message.getTo(), message.getSubject(), message.getBody());
     }
 }
+
